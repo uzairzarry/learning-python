@@ -4,17 +4,18 @@ def getRequest(*args,**kwargs):
     
     url,endpoint = args
     
-    
-    response=requests.post(url+endpoint,json=body)
-    print(response.json())
-
+    try:
+        response=requests.post(url+endpoint,json=body)
+        print(response.json())
+    except Exception as e:
+        print(e)
 
 # arguments
-url='https://uzairzarry.pythonanywhere.com/api'
+url='https://loremlorem.com/api'
 endpoint='/login/'
 body={
-    'email':'uzairmushtaq1@gmail.com',
-    'password':'error404'
+    'email':'test1@gmail.com',
+    'password':'test'
 }
 other={}
 getRequest(url,endpoint,body=body,other=other)
